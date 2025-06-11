@@ -1,0 +1,329 @@
+.noteease-main-container {
+  background: #f9fbfd;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  font-family: 'Inter', 'Roboto', 'Helvetica', Arial, sans-serif;
+  color: #222;
+}
+
+.noteease-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e6ee;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(74, 144, 226, 0.04);
+}
+
+.main-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4A90E2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-input {
+  padding: 9px 13px;
+  border: 1px solid #dae2ef;
+  border-radius: 7px;
+  background: #f6f8fa;
+  color: #183353;
+  font-size: 1rem;
+  width: 220px;
+  transition: border 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4A90E2;
+}
+
+.category-filter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.category-filter select {
+  padding: 8px 10px;
+  border: 1px solid #dae2ef;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f6f8fa;
+  color: #222;
+}
+
+.add-category-btn {
+  background: #F5A623;
+  color: #fff;
+  font-size: 1.08em;
+  padding: 0 10px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 34px;
+  width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notes-list-wrapper {
+  max-width: 960px;
+  margin: 40px auto 0 auto;
+  padding: 0 16px;
+}
+
+.no-notes {
+  color: #888;
+  background: #f5f8fd;
+  border: 1px solid #e3e6ee;
+  padding: 36px 0;
+  border-radius: 9px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1.15em;
+}
+
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.note-card {
+  background: #fff;
+  border: 1.5px solid #e3e6ee;
+  border-radius: 12px;
+  width: calc(33% - 24px);
+  min-width: 260px;
+  max-width: 320px;
+  padding: 18px 16px 11px 16px;
+  box-shadow: 0 1px 6px rgba(74, 144, 226, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.18s;
+}
+
+.note-card:hover {
+  box-shadow: 0 4px 16px rgba(74, 144, 226, 0.12);
+  border-color: #aecdfa;
+}
+
+.note-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+}
+
+.note-title {
+  font-size: 1.13em;
+  font-weight: 600;
+  color: #183353;
+  max-width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.note-category {
+  background: #4A90E2;
+  color: #fff;
+  border-radius: 13px;
+  padding: 3px 16px 3px 11px;
+  font-size: 0.88em;
+  font-weight: 500;
+  margin-left: 8px;
+  min-width: 56px;
+  text-align: center;
+}
+
+.note-snippet {
+  color: #384760;
+  font-size: 1.01em;
+  min-height: 40px;
+  margin-bottom: 12px;
+  margin-top: 2px;
+  white-space: pre-wrap;
+}
+
+.note-card-actions {
+  display: flex;
+  gap: 9px;
+  justify-content: flex-end;
+}
+
+.note-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 6px 16px;
+  margin: 0;
+  font-size: 0.97em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.19s;
+}
+
+.note-btn.edit {
+  background: #4A90E2;
+  color: #fff;
+}
+.note-btn.edit:hover {
+  background: #2176ca;
+}
+
+.note-btn.delete {
+  background: #f63e43;
+  color: #fff;
+}
+.note-btn.delete:hover {
+  background: #c30d13;
+}
+
+.floating-action-btn {
+  position: fixed;
+  bottom: 36px;
+  right: 38px;
+  z-index: 99;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(95deg,#4A90E2 84%,#F5A623 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 2.7em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(74, 144, 226, .14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, box-shadow 0.18s;
+  outline: none;
+}
+
+.floating-action-btn:hover {
+  background: linear-gradient(110deg,#3973ba,#F5A623 80%);
+  box-shadow: 0 7px 30px rgba(74, 144, 226, .22);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1999;
+  background: rgba(62, 74, 109, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  max-width: 390px;
+  min-width: 300px;
+  width: 96vw;
+  border-radius: 12px;
+  padding: 24px 23px;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.14);
+  display: flex;
+  flex-direction: column;
+  animation: modalPopIn 0.24s;
+}
+@keyframes modalPopIn {
+  from { opacity: 0; transform: scale(.92);}
+  to   { opacity: 1; transform: scale(1);}
+}
+
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #4A90E2;
+  margin-bottom: 13px;
+}
+
+.modal-input, .modal-textarea, .modal-select {
+  border: 1px solid #dae2ef;
+  border-radius: 7px;
+  background: #f6f8fa;
+  color: #183353;
+  font-size: 1.05em;
+  margin-bottom: 13px;
+  padding: 9px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  transition: border .18s;
+}
+
+.modal-input:focus, .modal-textarea:focus, .modal-select:focus {
+  border-color: #4A90E2;
+  outline: none;
+}
+
+.modal-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 9px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.note-btn.save {
+  background: #4A90E2;
+  color: #fff;
+}
+.note-btn.save:hover:enabled {
+  background: #3973ba;
+}
+.note-btn.cancel {
+  background: #e3e6ee;
+  color: #384760;
+}
+
+@media (max-width: 1020px) {
+  .notes-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .note-card {
+    width: 95%;
+    min-width: 240px;
+    margin: auto;
+    margin-bottom: 23px;
+  }
+}
+@media (max-width: 620px) {
+  .noteease-topbar,
+  .notes-list-wrapper {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+@media (max-width: 440px) {
+  .note-card { min-width: 180px; }
+  .main-logo { font-size: 1.12rem; }
+  .search-input { width: 110px; font-size: .92rem; }
+  .floating-action-btn { width: 48px; height: 48px; font-size: 1.6em;}
+}
